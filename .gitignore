@@ -1,0 +1,14 @@
+# Compiled simulation executables
+cpu_sim
+*.exe
+*.vvp
+*.out
+
+# Ignore root scratch VCD dumps while keeping verified reference waveform in sim/
+/dump.vcd
+!sim/dump.vcd
+
+# OS / editor artifacts
+.DS_Store
+Thumbs.db
+*.swp

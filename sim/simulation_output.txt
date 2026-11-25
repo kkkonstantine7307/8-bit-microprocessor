@@ -1,0 +1,15 @@
+Time: 35 | OUT: 0
+Time: 95 | OUT: 1
+Time: 175 | OUT: 1
+Time: 235 | OUT: 2
+Time: 315 | OUT: 3
+Time: 375 | OUT: 5
+Time: 455 | OUT: 8
+Time: 515 | OUT: 13
+Time: 595 | OUT: 21
+Time: 655 | OUT: 34
+Time: 735 | OUT: 55
+Time: 795 | OUT: 89
+Time: 875 | OUT: 144
+Time: 935 | OUT: 233
+testbench.v:10: $finish called at 960 (1s)

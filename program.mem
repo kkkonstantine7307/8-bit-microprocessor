@@ -1,0 +1,9 @@
+30 // 0: OUT        (print acc = F(n))
+28 // 1: ADD  Y     (acc = F(n) + F(n-1) = F(n+1))
+58 // 2: STORE Y    (Y = F(n+1))
+30 // 3: OUT        (print F(n+1))
+27 // 4: ADD  X     (acc = F(n+1) + F(n) = F(n+2))
+57 // 5: STORE X    (X = F(n+2))
+60 // 6: JMP 0
+00 // 7: X
+01 // 8: Y
