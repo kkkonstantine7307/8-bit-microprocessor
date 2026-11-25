@@ -22,7 +22,9 @@ Optimized/
 │   └── run_sim.sh                 # One-command build & run script (Linux / macOS)
 └── sim/
     ├── simulation_output.txt      # Verified console output from Icarus Verilog
-    └── dump.vcd                   # Verified VCD waveform dump for GTKWave inspection
+    ├── dump.vcd                   # Verified VCD waveform dump for GTKWave inspection
+    ├── optimized_terminal_output.png # Terminal compilation & simulation run screenshot
+    └── optimized_waveform_zoom.png   # Cycle-by-cycle decoded GTKWave trace (0–320 ns)
 ```
 
 ---
@@ -123,23 +125,17 @@ See [docs/optimization_comparison.md](docs/optimization_comparison.md) for the f
 
 ## Verified Simulation Output
 
-```text
-Time: 35 | OUT: 0
-Time: 95 | OUT: 1
-Time: 175 | OUT: 1
-Time: 235 | OUT: 2
-Time: 315 | OUT: 3
-Time: 375 | OUT: 5
-Time: 455 | OUT: 8
-Time: 515 | OUT: 13
-Time: 595 | OUT: 21
-Time: 655 | OUT: 34
-Time: 735 | OUT: 55
-Time: 795 | OUT: 89
-Time: 875 | OUT: 144
-Time: 935 | OUT: 233
-testbench.v:10: $finish called at 960 (1s)
-```
+All reference simulation logs, waveforms, and screenshots are stored in [`sim/`](sim/).
+
+### Console Output (`0` to `233`)
+
+![Icarus Verilog Simulation Output](sim/optimized_terminal_output.png)
+
+### Cycle-by-Cycle Decoded Waveform (`0 ns` to `320 ns`)
+
+Shows `clk`, `reset`, `state` (`0` = `FETCH`, `1` = `EXECUTE`), `pc`, decoded `ir` instructions (`OUT`, `ADD 8`, `STR 8`, `OUT`, `ADD 7`, `STR 7`, `JMP 0`), `acc`, and `out_port` stepping through `0 → 1 → 1 → 2 → 3`:
+
+![Optimized 8-Bit CPU Waveform Trace](sim/optimized_waveform_zoom.png)
 
 ---
 
